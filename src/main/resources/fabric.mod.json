@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "id": "eblib",
+  "version": "${version}",
+
+  "name": "EBLib",
+  "description": "Common Library for ports of Verclene's MODs ",
+  "authors": [
+    "Me!"
+  ],
+
+  "license": "",
+  "icon": "logo.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "net.blacklab.lib.EBLib"
+    ]
+  },
+
+  "depends": {
+    "fabricloader": ">=0.12.12",
+    "fabric": "*",
+    "minecraft": "1.18.x",
+    "java": ">=17"
+  }
+}

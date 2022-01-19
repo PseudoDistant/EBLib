@@ -13,3 +13,5 @@
 /options.txt
 /usercache.json
 /usernamecache.json
+/run/
+/.idea/

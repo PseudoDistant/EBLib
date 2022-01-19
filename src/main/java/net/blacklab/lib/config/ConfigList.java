@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
-
 @SuppressWarnings("ALL")
 public class ConfigList {
 	private final List<ConfigKey> list;
@@ -198,10 +196,11 @@ public class ConfigList {
 	 * @param event EventHandlerに渡されるFMLPreInitializationEvent
 	 * @throws IOException  何らかの理由でconfigのロードに失敗した場合にスローされます。
 	 */
-	public void loadConfig(String configFileName,FMLPreInitializationEvent event) throws IOException{
+	//TODO: GSON moment
+	/*public void loadConfig(String configFileName,FMLPreInitializationEvent event) throws IOException{
 		File file = new File(event.getModConfigurationDirectory(), configFileName+".cfg");
 		loadConfig(file);
-	}
+	}*/
 
 	/**
 	 * Configファイルを読み出します。
@@ -211,9 +210,9 @@ public class ConfigList {
 	 * @param event EventHandlerに渡されるFMLPreInitializationEvent
 	 * @throws IOException  何らかの理由でconfigのロードに失敗した場合にスローされます。
 	 */
-	public void loadConfig(FMLPreInitializationEvent event) throws IOException{
+	/*public void loadConfig(FMLPreInitializationEvent event) throws IOException{
 		loadConfig(event.getSuggestedConfigurationFile());
-	}
+	}*/
 	
 	/**
 	 * Configファイルを読み出します。
@@ -245,10 +244,10 @@ public class ConfigList {
 	 * @param event EventHandlerに渡されるFMLPreInitializationEvent
 	 * @throws IOException  何らかの理由でconfigのセーブに失敗した場合にスローされます。
 	 */
-	public void saveConfig(String configFileName,FMLPreInitializationEvent event) throws IOException{
+	/*public void saveConfig(String configFileName,FMLPreInitializationEvent event) throws IOException{
 		File file = new File(event.getModConfigurationDirectory(), configFileName+".cfg");
 		saveConfig(file);
-	}
+	}*/
 	
 	/**
 	 * Configファイルを書き出します。
@@ -258,9 +257,9 @@ public class ConfigList {
 	 * @param event EventHandlerに渡されるFMLPreInitializationEvent
 	 * @throws IOException  何らかの理由でconfigのセーブに失敗した場合にスローされます。
 	 */
-	public void saveConfig(FMLPreInitializationEvent event) throws IOException{
+	/*public void saveConfig(FMLPreInitializationEvent event) throws IOException{
 		saveConfig(event.getSuggestedConfigurationFile());
-	}
+	}*/
 
 	/**
 	 * Configファイルを書き出します。このメソッドではFileを直接指定します。

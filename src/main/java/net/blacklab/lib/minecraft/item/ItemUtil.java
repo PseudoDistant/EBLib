@@ -1,23 +1,23 @@
 package net.blacklab.lib.minecraft.item;
 
-import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemArmor;
-import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.Identifier;
+import net.minecraft.util.registry.Registry;
 
 @SuppressWarnings("ALL")
 public class ItemUtil {
 	
 	public static Item getItemByStringId(String id){
-		return Item.REGISTRY.getObject(new ResourceLocation(id));
+		return Registry.ITEM.get(new Identifier(id));
 	}
 
 	public static boolean isHelm(ItemStack stack){
 		if(stack!=null){
-			if(stack.getItem() instanceof ItemArmor){
-				if(((ItemArmor)stack.getItem()).armorType == EntityEquipmentSlot.HEAD){
+			if(stack.getItem() instanceof ArmorItem){
+				if(((ArmorItem)stack.getItem()).getSlotType() == EquipmentSlot.HEAD){
 					return true;
 				}
 			}
@@ -29,8 +29,8 @@ public class ItemUtil {
 		if (pStack == null) {
 			return -1;
 		}
-		if (pStack.getItem() instanceof ItemFood) {
-			return ((ItemFood) pStack.getItem()).getHealAmount(pStack);
+		if (pStack.getItem().isFood()) {
+			return pStack.getItem().getFoodComponent().getHunger();
 		}
 		return -1;
 	}
